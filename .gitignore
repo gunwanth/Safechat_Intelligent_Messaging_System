@@ -27,6 +27,8 @@ ML_model/*.json
 ML_model/*.md
 
 !ML_model/__init__.py
+!ML_model/base_model.pkl
+!ML_model/base_vectorizer.pkl
 !ML_model/live_trainer.py
 !ML_model/metadata_trainer.py
 !ML_model/xai_explainer.py
