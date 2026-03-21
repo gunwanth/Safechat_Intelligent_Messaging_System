@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="disc" x1="96" y1="84" x2="408" y2="428" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7F95FF"/>
+      <stop offset="1" stop-color="#7B5AD9"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="181" y1="146" x2="334" y2="348" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8A63FF"/>
+      <stop offset="1" stop-color="#5E33DF"/>
+    </linearGradient>
+    <filter id="shadow" x="54" y="54" width="404" height="404" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="16"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0 0.2 0 0 0 0.32 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <circle cx="256" cy="220" r="164" fill="url(#disc)"/>
+  </g>
+
+  <path d="M256 109L371 150V244C371 323 325 392 256 427C187 392 141 323 141 244V150L256 109Z" fill="#ECEBF7"/>
+  <path d="M256 138L344 170V240C344 301 309 354 256 385C203 354 168 301 168 240V170L256 138Z" fill="url(#shield)"/>
+  <path d="M224 174L191 174L232 214L288 214L320 183L275 183L247 157L224 174Z" fill="#A78BFF" opacity="0.45"/>
+  <path d="M228 256L205 232C198 225 187 225 180 232C173 239 173 251 180 258L216 294C223 301 234 301 241 294L334 201C341 194 341 183 334 176C327 169 316 169 309 176L228 256Z" fill="#F7F7FB"/>
+</svg>

@@ -1,0 +1,82 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyGrad" x1="121" y1="115" x2="437" y2="272" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7DE7FF"/>
+      <stop offset="0.45" stop-color="#32A9FF"/>
+      <stop offset="1" stop-color="#0D5CCB"/>
+    </linearGradient>
+    <linearGradient id="finGrad" x1="182" y1="102" x2="281" y2="185" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#93F2FF"/>
+      <stop offset="1" stop-color="#1271DD"/>
+    </linearGradient>
+    <linearGradient id="eyeGrad" x1="350" y1="97" x2="382" y2="129" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD2F0"/>
+      <stop offset="0.6" stop-color="#FF7AB6"/>
+      <stop offset="1" stop-color="#7DE7FF"/>
+    </linearGradient>
+    <filter id="glow" x="86" y="66" width="368" height="241" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#glow)">
+    <path d="M129 208C160 149 221 108 298 101C366 95 410 123 435 162C447 181 445 212 429 230C393 268 315 284 242 270C202 262 160 241 129 208Z" fill="url(#bodyGrad)"/>
+    <path d="M235 107L285 170L191 160L235 107Z" fill="url(#finGrad)"/>
+    <path d="M185 251L225 220L201 285L185 251Z" fill="url(#finGrad)"/>
+    <path d="M129 205L76 184L118 168L129 205Z" fill="url(#finGrad)"/>
+    <path d="M124 207L76 247L97 193L124 207Z" fill="url(#finGrad)"/>
+    <path d="M429 174L550 154L447 229L429 174Z" fill="#060B16"/>
+    <path d="M302 175L431 176L449 195L302 221L255 198L302 175Z" fill="#04070E"/>
+  </g>
+
+  <circle cx="364" cy="112" r="18" fill="url(#eyeGrad)"/>
+  <circle cx="364" cy="112" r="9" fill="#2B1428"/>
+  <circle cx="360" cy="107" r="3" fill="#FFF4FB"/>
+
+  <path d="M300 175L431 176L448 194L301 220" stroke="#0C1322" stroke-width="6" stroke-linejoin="round"/>
+
+  <g stroke="#EAF8FF" stroke-width="4" stroke-linecap="round">
+    <path d="M319 180L312 214"/>
+    <path d="M337 178L332 212"/>
+    <path d="M355 178L352 210"/>
+    <path d="M373 177L371 208"/>
+    <path d="M391 177L390 206"/>
+    <path d="M409 177L409 203"/>
+  </g>
+
+  <g stroke="#EAF8FF" stroke-width="3" stroke-linecap="round">
+    <path d="M313 180L327 196"/>
+    <path d="M330 179L345 195"/>
+    <path d="M347 178L363 194"/>
+    <path d="M364 178L381 194"/>
+    <path d="M382 178L399 194"/>
+    <path d="M400 178L416 194"/>
+  </g>
+
+  <g stroke="#FFFFFF" stroke-opacity="0.26" stroke-width="4" stroke-linecap="round">
+    <path d="M180 148L231 130"/>
+    <path d="M174 184L226 178"/>
+    <path d="M181 221L233 231"/>
+    <path d="M251 112L286 137"/>
+  </g>
+
+  <g fill="#B7F5FF" fill-opacity="0.75">
+    <circle cx="167" cy="166" r="2.4"/>
+    <circle cx="184" cy="156" r="2.2"/>
+    <circle cx="201" cy="148" r="2.2"/>
+    <circle cx="217" cy="143" r="2.1"/>
+    <circle cx="232" cy="140" r="2.1"/>
+    <circle cx="187" cy="191" r="2.3"/>
+    <circle cx="207" cy="188" r="2.2"/>
+    <circle cx="228" cy="188" r="2.2"/>
+    <circle cx="247" cy="191" r="2.1"/>
+    <circle cx="202" cy="219" r="2.3"/>
+    <circle cx="224" cy="224" r="2.2"/>
+    <circle cx="246" cy="229" r="2.1"/>
+    <circle cx="268" cy="232" r="2.1"/>
+    <circle cx="286" cy="228" r="2.2"/>
+    <circle cx="305" cy="220" r="2.2"/>
+  </g>
+</svg>
