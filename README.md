@@ -64,6 +64,7 @@ SafeChat is an end-to-end intelligent communication system that enhances securit
 ---
 
 ## 🏗️ Project Structure
+'''
 Safechat_Intelligent_Messaging_System/
 │
 ├── ML_model/ # Machine learning models
@@ -108,7 +109,7 @@ Safechat_Intelligent_Messaging_System/
 | Email API      | Gmail API |
 | Deployment     | Docker, Docker Compose, Gunicorn |
 | Versioning     | Git + Git LFS |
-
+'''
 ---
 
 ## 🧠 System Workflow
