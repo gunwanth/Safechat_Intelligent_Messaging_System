@@ -96,7 +96,6 @@ Safechat_Intelligent_Messaging_System/
 ├── PROJECT_FLOWCHART.md
 ├── METHODOLOGY_NLU_METADATA_DETAILS.md
 └── CHANGELOG_PROJECT_UPDATES.md
-
 ---
 
 ## ⚙️ Tech Stack
