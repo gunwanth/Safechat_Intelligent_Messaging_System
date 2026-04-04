@@ -12,13 +12,7 @@ Built using <b>Python</b> + <b>Machine Learning</b> + <b>Docker</b>.
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue" />
-  <img src="https://img.shields.io/badge/ML-NLP-green" />
-  <img src="https://img.shields.io/badge/Security-PhishingDetection-red" />
-  <img src="https://img.shields.io/badge/Deployment-Docker-blueviolet" />
-  <img src="https://img.shields.io/badge/Status-Active-success" />
-</p>
+
 
 ---
 
