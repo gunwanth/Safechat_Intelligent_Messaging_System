@@ -12,7 +12,18 @@ env/
 .gitattributes
 .vscode/
 
-ML_model/
+ML_model/*.pkl
+ML_model/*.joblib
+ML_model/*.bin
+ML_model/*.pt
+ML_model/*.onnx
+ML_model/*.json
+ML_model/*.md
+!ML_model/__init__.py
+!ML_model/live_trainer.py
+!ML_model/metadata_trainer.py
+!ML_model/xai_explainer.py
+!ML_model/kaggle_dataset.csv
 runtime_tokens/
 token_*.pkl
 users.json

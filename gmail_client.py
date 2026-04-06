@@ -1,6 +1,7 @@
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
+from google.auth.exceptions import RefreshError
 import os
 import pickle
 import base64
@@ -22,6 +23,13 @@ class GmailClient:
         )
         self.pending_auth_url = None
         self.pending_auth_state = None
+
+    def _clear_token(self):
+        try:
+            if os.path.exists(self.token_file):
+                os.remove(self.token_file)
+        except OSError:
+            pass
 
     def _build_flow(self):
         flow = InstalledAppFlow.from_client_secrets_file(
@@ -63,14 +71,46 @@ class GmailClient:
 
             if not creds or not creds.valid:
                 if creds and creds.expired and creds.refresh_token:
-                    creds.refresh(Request())
+                    try:
+                        creds.refresh(Request())
+                    except RefreshError:
+                        self._clear_token()
+                        self.begin_auth()
+                        return False
+                    except Exception as e:
+                        error_text = str(e).lower()
+                        if "invalid_grant" in error_text or "expired or revoked" in error_text:
+                            self._clear_token()
+                            self.begin_auth()
+                            return False
+                        raise
                 else:
+                    self._clear_token()
                     self.begin_auth()
                     return False
                 with open(self.token_file, 'wb') as token:
                     pickle.dump(creds, token)
 
-            self.service = build('gmail', 'v1', credentials=creds)
+            try:
+                self.service = build('gmail', 'v1', credentials=creds)
+            except Exception as e:
+                error_text = str(e).lower()
+                if "invalid_grant" in error_text or "expired or revoked" in error_text:
+                    self._clear_token()
+                    self.begin_auth()
+                    return False
+                raise
+
+            if creds and not getattr(creds, "valid", False):
+                if getattr(creds, "refresh_token", None):
+                    self._clear_token()
+                    self.begin_auth()
+                    return False
+                else:
+                    self._clear_token()
+                    self.begin_auth()
+                    return False
+
             self.authenticated = True
             return True
         except Exception as e:

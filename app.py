@@ -10,9 +10,23 @@ from contextlib import redirect_stdout
 from flask import jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from sklearn.exceptions import InconsistentVersionWarning
-from ML_model.xai_explainer import XAIExplainer
 from sms_generator import SMSGenerator
 from email_column_router import EmailColumnRouter
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ML_MODEL_DIR = os.path.join(BASE_DIR, "ML_model")
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+if ML_MODEL_DIR not in sys.path:
+    sys.path.insert(0, ML_MODEL_DIR)
+
+try:
+    from ML_model.xai_explainer import XAIExplainer
+except Exception:
+    try:
+        from xai_explainer import XAIExplainer  # type: ignore
+    except Exception:
+        XAIExplainer = None
 
 USERS_FILE = "users.json"
 EMAIL_COLUMN_ROUTER = EmailColumnRouter()
@@ -30,7 +44,6 @@ def safe_load_pickle(path: str):
         print(f"[WARN] Skipping incompatible sklearn artifact: {path}")
         return None
 
-sys.path.append("ML_model")
 try:
     from xai_explainer import XAIExplainer
 except Exception as e:
